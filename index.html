@@ -7,7 +7,7 @@
 
 
         <link rel="stylesheet" href="styles/passwordChecker.css">
-        <script src="passwordChecker.js"></script>
+        <script src="passwordChecker.js" defer></script>
 
     <!--Code authors Xalli Bell & Emily Menken-->
 
@@ -20,11 +20,12 @@
     <h1>Password Checker!</h1>
 
     <!--Text input box-->
-    <p>Enter Password:</p>
-    <input type="text" id="password">  
+    <label>Enter your name: 
+        <input type="text" id="password">
+    </label>
 
     <!--Button labeled "Check Password"-->
-    <button>Check Password</button>
+    <button id="click">Check Password</button>
     <p id="output"></p>
 
     <!--Display results in a <div> or <p>-->
