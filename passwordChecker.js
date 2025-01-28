@@ -45,40 +45,26 @@ document.getElementById('click').onclick = function()
         }
     }
 
-    // has uppercase, has lower
-    let foundUpperChar = ABCDEFGHIJKLMNOP;
-    // let hasLower = 0;
-    for(let c of password)
-    {
+    //has uppercase
+    let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let foundUpperChar = false;
+
+     for (let c of password) {
         if (upperChar.includes(c)) {
             foundUpperChar = true;
-            break; //found a uppercase char, ending loop
-        }
+            break; //found a lowercase char, ending loop
+    }
     }
 
-    // if (!upperChar) {
-    //     document.getElementById('output').innerHTML = "Password must contain at least one uppercase character";
+    if (!foundUpperChar) {
+        document.getElementById('output').innerHTML = "Password must contain at least one uppercase character";
 
-    //     output.classList.add('printError'); // Add error message
-    //     return;
-    // }
-
-    //     if(c.isLower())
-    //     {
-    //         hasLower++;
-    //     }
-    // }
-
-    // if(hasUpper === 0)
-    // {
-    //     document.getElementById('output').innerHTML = "Password must contain atleast one uppercase letter";
-    // }
-    // if(hasLower === 0)
-    // {
-    //     document.getElementById('output').innerHTML = "Password must contain atleast one lowercase letter";
-    // }
+        output.classList.add('printError'); // Add error message
+        return;
+    }
 
 
+    //has lowercase
     let lowerCase = "abcdefghijklmnopqrstuvwxyz";
     let foundlowerCase = false; //changes to true when the loop finds a lowercase char
 
@@ -96,13 +82,24 @@ document.getElementById('click').onclick = function()
         return;
     }
 
-    //has number
-    // for(let c in password)
-    // {
-    //     if(isNaN(c))
-    //     {
-    //         document.getElementById('output').innerHTML = "Password must containt atleast one number";
-    //     }
-    // }
-     
+    // has number
+let number = "1234567890";
+let foundNumber = false;
+
+    for(let c of password)
+{
+
+if (number.includes(c)){
+    foundNumber = true;
+    break; //found a lowercase char, ending loop
 }
+}
+
+        if(!foundNumber){
+            document.getElementById('output').innerHTML = "Password must contain at least one number";
+
+            output.classList.add('printError'); // Add error message
+            return;
+        }
+    }
+     
