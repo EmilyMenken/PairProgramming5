@@ -44,7 +44,26 @@ document.getElementById('click').onclick = function()
             return;
         }
     }
-    
+
+    //has uppercase
+    let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let foundUpperChar = false;
+
+     for (let c of password) {
+        if (upperChar.includes(c)) {
+            foundUpperChar = true;
+            break; //found a lowercase char, ending loop
+    }
+    }
+
+    if (!foundUpperChar) {
+        document.getElementById('output').innerHTML = "Password must contain at least one uppercase character";
+
+        output.classList.add('printError'); // Add error message
+        return;
+    }
+
+    //has lowercase
     let lowerCase = "abcdefghijklmnopqrstuvwxyz";
     let foundLowerCase = false; //changes to true when the loop finds a lowercase char
 
@@ -62,6 +81,27 @@ document.getElementById('click').onclick = function()
         return;
     }  
     
-    
-    
+        // has number
+    let number = "1234567890";
+    let foundNumber = false;
+    for(let c of password)
+    {
+
+        if (number.includes(c)){
+            foundNumber = true;
+            break; //found a lowercase char, ending loop
+        }
+    }
+    if(!foundNumber){
+        document.getElementById('output').innerHTML = "Password must contain at least one number";
+
+        output.classList.add('printError'); // Add error message
+        return;
+    }
+
+    //password is valid
+    else
+    {
+        document.getElementById('output').innerHTML = "Passowrd is valid!";
+    }
 }
