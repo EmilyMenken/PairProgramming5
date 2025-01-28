@@ -34,55 +34,34 @@ document.getElementById('click').onclick = function()
     }
 
     //has spaces
-    for(let c in password)
+    for(let c of password)
     {
         if(c === " ")
         {
             document.getElementById('output').innerHTML = "Password must NOT contain any spaces";
+
+            output.classList.add('printError'); // Add error message
+            return;
         }
     }
-
-    //has uppercase, has lower
-    // let hasUpper = 0;
-    // let hasLower = 0;
-    // for(let c in password)
-    // {
-    //     if(c.isUpper())
-    //     {
-    //         hasUpper++;
-    //     }
-    //     if(c.isLower())
-    //     {
-    //         hasLower++;
-    //     }
-
-    // }
-    // if(hasUpper === 0)
-    // {
-    //     document.getElementById('output').innerHTML = "Password must contain atleast one uppercase letter";
-    // }
-    // if(hasLower === 0)
-    // {
-    //     document.getElementById('output').innerHTML = "Password must contain atleast one lowercase letter";
-    // }
-
+    
     let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-    let foundlowerCase = false; //changes to true when the loop finds a lowercase char
+    let foundLowerCase = false; //changes to true when the loop finds a lowercase char
 
     for (let c of password) {
         if (lowerCase.includes(c)) {
-            foundlowerCase = true;
+            foundLowerCase = true;
             break; //found a lowercase char, ending loop
         }
     }
 
-    if (!foundlowerCase) {
+    if (!foundLowerCase) {
         document.getElementById('output').innerHTML = "Password must contain at least one lowercase character";
 
         output.classList.add('printError'); // Add error message
         return;
-    }
-
+    }  
     
-     
+    
+    
 }
