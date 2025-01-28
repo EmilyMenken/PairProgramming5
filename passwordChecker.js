@@ -66,6 +66,23 @@ document.getElementById('click').onclick = function()
     //     document.getElementById('output').innerHTML = "Password must contain atleast one lowercase letter";
     // }
 
+    let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    let foundlowerCase = false; //changes to true when the loop finds a lowercase char
+
+    for (let c of password) {
+        if (lowerCase.includes(c)) {
+            foundlowerCase = true;
+            break; //found a lowercase char, ending loop
+    }
+    }
+
+    if (!foundlowerCase) {
+        document.getElementById('output').innerHTML = "Password must contain at least one lowercase character";
+
+        output.classList.add('printError'); // Add error message
+        return;
+    }
+
     //has number
     // for(let c in password)
     // {
