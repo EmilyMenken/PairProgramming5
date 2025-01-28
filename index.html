@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PP5 Password Checker</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PP5 Password Checker</title>
 
 
-    <link rel="stylesheet" href="styles/passwordChecker.css">
+        <link rel="stylesheet" href="styles/passwordChecker.css">
+        <script src="passwordChecker.js" defer></script>
 
-<!--Code authors Xalli Bell & Emily Menken-->
+    <!--Code authors Xalli Bell & Emily Menken-->
 
 
 </head>
-<body>
 
-    
-<!-- Header -->
+<body>
+<!--     
 <h1 >Password Checker! Insert password here →</h1>
 
-<!--Text input box-->
 <input type="text" id="passwordInputBox" placeholder="Type your password here to test it's STRENGTH!">
 
-<!--Button labeled "Check Password"-->
-<button id= "checkPassword">Check my password!</button>
+<button id= "checkPassword">Check my password!</button> -->
 
-<!--Display results in a <div> or <p>-->
+    <h1>Password Checker!</h1>
 
+    <!--Text input box-->
+    <label>Enter your password: 
+        <input type="text" id="password" placeholder="Ex: V3ryStrongP@ssword">
+    </label>
+
+    <!--Button labeled "Check Password"-->
+    <button id="click">Check Password</button>
+    <p id="output"></p>
+
+    <!--Display results in a <div> or <p>-->
+    
     <!-- <div id="passwordResults"> -->
         <!-- doesn't pass all the tests
         make text red -->
@@ -37,5 +46,5 @@
             <!-- <p>Password is strong and valid!</p> -->
     <!-- </div> -->
 
-</body>
+    </body>
 </html>
