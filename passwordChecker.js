@@ -8,6 +8,7 @@ document.getElementById('click').onclick = function()
 
     //is password 8+ chars
     if(password.length < 8)
+    
     {
         document.getElementById('output').innerHTML = "Password must be 8 or more characters long";
 
