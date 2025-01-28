@@ -34,29 +34,41 @@ document.getElementById('click').onclick = function()
     }
 
     //has spaces
-    for(let c in password)
+    for(let c of password)
     {
         if(c === " ")
         {
             document.getElementById('output').innerHTML = "Password must NOT contain any spaces";
+
+            output.classList.add('printError'); // Add error message
+            return;
         }
     }
 
-    //has uppercase, has lower
-    // let hasUpper = 0;
+    // has uppercase, has lower
+    let foundUpperChar = ABCDEFGHIJKLMNOP;
     // let hasLower = 0;
-    // for(let c in password)
-    // {
-    //     if(c.isUpper())
-    //     {
-    //         hasUpper++;
-    //     }
+    for(let c of password)
+    {
+        if (upperChar.includes(c)) {
+            foundUpperChar = true;
+            break; //found a uppercase char, ending loop
+        }
+    }
+
+    // if (!upperChar) {
+    //     document.getElementById('output').innerHTML = "Password must contain at least one uppercase character";
+
+    //     output.classList.add('printError'); // Add error message
+    //     return;
+    // }
+
     //     if(c.isLower())
     //     {
     //         hasLower++;
     //     }
-
     // }
+
     // if(hasUpper === 0)
     // {
     //     document.getElementById('output').innerHTML = "Password must contain atleast one uppercase letter";
@@ -66,13 +78,13 @@ document.getElementById('click').onclick = function()
     //     document.getElementById('output').innerHTML = "Password must contain atleast one lowercase letter";
     // }
 
-    //has number
-    // for(let c in password)
-    // {
-    //     if(isNaN(c))
-    //     {
-    //         document.getElementById('output').innerHTML = "Password must containt atleast one number";
-    //     }
-    // }
+    // has number
+    for(let c of password)
+    {
+        if(!isNaN(c))
+        {
+            document.getElementById('output').innerHTML = "Password must contain atleast one number";
+        }
+    }
      
 }
