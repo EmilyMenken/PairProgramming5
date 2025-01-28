@@ -73,7 +73,7 @@ document.getElementById('click').onclick = function()
         if (lowerCase.includes(c)) {
             foundlowerCase = true;
             break; //found a lowercase char, ending loop
-    }
+        }
     }
 
     if (!foundlowerCase) {
@@ -83,13 +83,6 @@ document.getElementById('click').onclick = function()
         return;
     }
 
-    //has number
-    // for(let c in password)
-    // {
-    //     if(isNaN(c))
-    //     {
-    //         document.getElementById('output').innerHTML = "Password must containt atleast one number";
-    //     }
-    // }
+    
      
 }
