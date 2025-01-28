@@ -10,7 +10,7 @@ document.getElementById('click').onclick = function()
     if(password.length < 8)
     
     {
-        document.getElementById('output').innerHTML = "Password must be 8 or more characters long";
+        document.getElementById('output').innerHTML = "Password invalid: Password must be 8 or more characters long";
 
         output.classList.add('printError'); // Add error message
         return;
@@ -28,7 +28,7 @@ document.getElementById('click').onclick = function()
     }
 
     if (!foundSpecialChar) {
-        document.getElementById('output').innerHTML = "Password must contain at least one special character";
+        document.getElementById('output').innerHTML = "Password invalid: Password must contain at least one special character";
 
         output.classList.add('printError'); // Add error message
         return;
@@ -39,7 +39,7 @@ document.getElementById('click').onclick = function()
     {
         if(c === " ")
         {
-            document.getElementById('output').innerHTML = "Password must NOT contain any spaces";
+            document.getElementById('output').innerHTML = "Password invalid: Password must NOT contain any spaces";
 
             output.classList.add('printError'); // Add error message
             return;
@@ -58,49 +58,54 @@ document.getElementById('click').onclick = function()
     }
 
     if (!foundUpperChar) {
-        document.getElementById('output').innerHTML = "Password must contain at least one uppercase character";
+        document.getElementById('output').innerHTML = "Password invalid: Password must contain at least one uppercase character";
 
         output.classList.add('printError'); // Add error message
         return;
     }
-
 
     //has lowercase
     let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-    let foundlowerCase = false; //changes to true when the loop finds a lowercase char
+    let foundLowerCase = false; //changes to true when the loop finds a lowercase char
 
     for (let c of password) {
         if (lowerCase.includes(c)) {
-            foundlowerCase = true;
+            foundLowerCase = true;
             break; //found a lowercase char, ending loop
-    }
+        }
     }
 
-    if (!foundlowerCase) {
-        document.getElementById('output').innerHTML = "Password must contain at least one lowercase character";
+    if (!foundLowerCase) {
+        document.getElementById('output').innerHTML = "Password invalid: Password must contain at least one lowercase character";
+
+        output.classList.add('printError'); // Add error message
+        return;
+    }  
+    
+        // has number
+    let number = "1234567890";
+    let foundNumber = false;
+    for(let c of password)
+    {
+
+        if (number.includes(c)){
+            foundNumber = true;
+            break; //found a lowercase char, ending loop
+        }
+    }
+    if(!foundNumber){
+        document.getElementById('output').innerHTML = "Password invalid: Password must contain at least one number";
 
         output.classList.add('printError'); // Add error message
         return;
     }
 
-    // has number
-let number = "1234567890";
-let foundNumber = false;
+    //password is valid
+    else
+    {
+        document.getElementById('output').innerHTML = "Password is valid!";
 
-    for(let c of password)
-{
-
-if (number.includes(c)){
-    foundNumber = true;
-    break; //found a lowercase char, ending loop
-}
-}
-
-        if(!foundNumber){
-            document.getElementById('output').innerHTML = "Password must contain at least one number";
-
-            output.classList.add('printError'); // Add error message
-            return;
-        }
+        output.classList.add('passwordSafe'); // Add valid message
+        return;
     }
-     
+}
