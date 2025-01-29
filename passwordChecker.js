@@ -3,6 +3,7 @@ document.getElementById('click').onclick = function()
 
     // Clears the error message from the last input
     document.getElementById('output').innerHTML = "";
+    document.getElementById('output').classList.remove('printError', 'passwordSafe'); //clears color, found a bug that if you put in a valid password and then an invalid one, the errors would be in green, this stops that
 
     let password = document.getElementById('password').value; 
     let errors = []; // Array to store error messages
